@@ -1,0 +1,7 @@
+{
+  "name": "auth-guard-test",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}

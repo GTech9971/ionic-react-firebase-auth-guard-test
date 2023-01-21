@@ -1,0 +1,362 @@
+> npm i -E @capacitor/ios@4.6.2
+
+added 1 package, and audited 1472 packages in 5s
+
+234 packages are looking for funding
+  run `npm fund` for details
+
+6 high severity vulnerabilities
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+> capacitor add ios
+[capacitor] ✔ Adding native Xcode project in ios in 17.20ms
+[capacitor] ✔ add in 17.53ms
+[capacitor] ✔ Copying web assets from build to ios/App/App/public in 14.47ms
+[capacitor] ✔ Creating capacitor.config.json in ios/App/App in 271.67μs
+[capacitor] ✔ copy ios in 26.77ms
+[capacitor] ✔ Updating iOS plugins in 4.04ms
+[capacitor] [info] Found 5 Capacitor plugins for ios:
+[capacitor]        @capacitor-firebase/authentication@1.3.0
+[capacitor]        @capacitor/app@4.1.1
+[capacitor]        @capacitor/haptics@4.1.0
+[capacitor]        @capacitor/keyboard@4.1.1
+[capacitor]        @capacitor/status-bar@4.1.1
+[capacitor] ✖ Updating iOS native dependencies with pod install - failed!
+[capacitor] ✖ update ios - failed!
+[capacitor] [error] Ignoring ffi-1.15.4 because its extensions are not built. Try: gem pristine ffi --version 1.15.4
+[capacitor]         Analyzing dependencies
+[capacitor]         
+[capacitor]         ――― MARKDOWN TEMPLATE ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+[capacitor]         
+[capacitor]         ### Command
+[capacitor]         
+[capacitor]         ```
+[capacitor]         /usr/local/bin/pod install
+[capacitor]         ```
+[capacitor]         
+[capacitor]         ### Report
+[capacitor]         
+[capacitor]         * What did you do?
+[capacitor]         
+[capacitor]         * What did you expect to happen?
+[capacitor]         
+[capacitor]         * What happened instead?
+[capacitor]         
+[capacitor]         
+[capacitor]         ### Stack
+[capacitor]         
+[capacitor]         ```
+[capacitor]         CocoaPods : 1.11.0
+[capacitor]         Ruby : ruby 2.6.10p210 (2022-04-12 revision 67958) [universal.arm64e-darwin22]
+[capacitor]         RubyGems : 3.0.3.1
+[capacitor]         Host : macOS 13.1 (22C65)
+[capacitor]         Xcode : 14.2 (14C18)
+[capacitor]         Git : git version 2.37.1 (Apple Git-137.1)
+[capacitor]         Ruby lib dir : /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib
+[capacitor]         Repositories : trunk - CDN - https://cdn.cocoapods.org/
+[capacitor]         ```
+[capacitor]         
+[capacitor]         ### Plugins
+[capacitor]         
+[capacitor]         ```
+[capacitor]         cocoapods-deintegrate : 1.0.5
+[capacitor]         cocoapods-plugins     : 1.0.0
+[capacitor]         cocoapods-search      : 1.0.1
+[capacitor]         cocoapods-trunk       : 1.6.0
+[capacitor]         cocoapods-try         : 1.2.0
+[capacitor]         ```
+[capacitor]         
+[capacitor]         ### Podfile
+[capacitor]         
+[capacitor]         ```ruby
+[capacitor]         require_relative '../../node_modules/@capacitor/ios/scripts/pods_helpers'
+[capacitor]         
+[capacitor]         platform :ios, '13.0'
+[capacitor]         use_frameworks!
+[capacitor]         
+[capacitor]         # workaround to avoid Xcode caching of Pods that requires
+[capacitor]         # Product -> Clean Build Folder after new Cordova plugins installed
+[capacitor]         # Requires CocoaPods 1.6 or newer
+[capacitor]         install! 'cocoapods', :disable_input_output_paths => true
+[capacitor]         
+[capacitor]         def capacitor_pods
+[capacitor]         pod 'Capacitor', :path => '../../node_modules/@capacitor/ios'
+[capacitor]         pod 'CapacitorCordova', :path => '../../node_modules/@capacitor/ios'
+[capacitor]         pod 'CapacitorFirebaseAuthentication', :path => '../../node_modules/@capacitor-firebase/authentication'
+[capacitor]         pod 'CapacitorApp', :path => '../../node_modules/@capacitor/app'
+[capacitor]         pod 'CapacitorHaptics', :path => '../../node_modules/@capacitor/haptics'
+[capacitor]         pod 'CapacitorKeyboard', :path => '../../node_modules/@capacitor/keyboard'
+[capacitor]         pod 'CapacitorStatusBar', :path => '../../node_modules/@capacitor/status-bar'
+[capacitor]         end
+[capacitor]         
+[capacitor]         target 'App' do
+[capacitor]         capacitor_pods
+[capacitor]         # Add your Pods here
+[capacitor]         end
+[capacitor]         
+[capacitor]         post_install do |installer|
+[capacitor]         assertDeploymentTarget(installer)
+[capacitor]         end
+[capacitor]         ```
+[capacitor]         
+[capacitor]         ### Error
+[capacitor]         
+[capacitor]         ```
+[capacitor]         LoadError - dlopen(/Library/Ruby/Gems/2.6.0/gems/ffi-1.15.4/lib/ffi_c.bundle, 0x0009): tried: '/Library/Ruby/Gems/2.6.0/gems/ffi-1.15.4/lib/ffi_c.bundle' (mach-o file, but is an incompatible architecture (have 'x86_64', need 'arm64')), '/System/Volumes/Preboot/Cryptexes/OS/Library/Ruby/Gems/2.6.0/gems/ffi-1.15.4/lib/ffi_c.bundle' (no such file), '/Library/Ruby/Gems/2.6.0/gems/ffi-1.15.4/lib/ffi_c.bundle' (mach-o file, but is an incompatible architecture (have 'x86_64', need 'arm64')) - /Library/Ruby/Gems/2.6.0/gems/ffi-1.15.4/lib/ffi_c.bundle
+[capacitor]         /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+[capacitor]         /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+[capacitor]         /Library/Ruby/Gems/2.6.0/gems/ffi-1.15.4/lib/ffi.rb:5:in `rescue in <top (required)>'
+[capacitor]         /Library/Ruby/Gems/2.6.0/gems/ffi-1.15.4/lib/ffi.rb:2:in `<top (required)>'
+[capacitor]         /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+[capacitor]         /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+[capacitor]         /Library/Ruby/Gems/2.6.0/gems/ethon-0.14.0/lib/ethon.rb:3:in `<top (required)>'
+[capacitor]         /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+[capacitor]         /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+[capacitor]         /Library/Ruby/Gems/2.6.0/gems/typhoeus-1.4.0/lib/typhoeus.rb:2:in `<top (required)>'
+[capacitor]         /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+[capacitor]         /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+[capacitor]         /Library/Ruby/Gems/2.6.0/gems/cocoapods-core-1.11.0/lib/cocoapods-core/cdn_source.rb:440:in `download_typhoeus_impl_async'
+[capacitor]         /Library/Ruby/Gems/2.6.0/gems/cocoapods-core-1.11.0/lib/cocoapods-core/cdn_source.rb:372:in `download_and_save_with_retries_async'
+[capacitor]         /Library/Ruby/Gems/2.6.0/gems/cocoapods-core-1.11.0/lib/cocoapods-core/cdn_source.rb:365:in `download_file_async'
+[capacitor]         /Library/Ruby/Gems/2.6.0/gems/cocoapods-core-1.11.0/lib/cocoapods-core/cdn_source.rb:338:in `download_file'
+[capacitor]         /Library/Ruby/Gems/2.6.0/gems/cocoapods-core-1.11.0/lib/cocoapods-core/cdn_source.rb:284:in `ensure_versions_file_loaded'
+[capacitor]         /Library/Ruby/Gems/2.6.0/gems/cocoapods-core-1.11.0/lib/cocoapods-core/cdn_source.rb:208:in `search'
+[capacitor]         /Library/Ruby/Gems/2.6.0/gems/cocoapods-core-1.11.0/lib/cocoapods-core/source/aggregate.rb:83:in `block in search'
+[capacitor]         /Library/Ruby/Gems/2.6.0/gems/cocoapods-core-1.11.0/lib/cocoapods-core/source/aggregate.rb:83:in `select'
+[capacitor]         /Library/Ruby/Gems/2.6.0/gems/cocoapods-core-1.11.0/lib/cocoapods-core/source/aggregate.rb:83:in `search'
+[capacitor]         /Library/Ruby/Gems/2.6.0/gems/cocoapods-1.11.0/lib/cocoapods/resolver.rb:416:in `create_set_from_sources'
+[capacitor]         /Library/Ruby/Gems/2.6.0/gems/cocoapods-1.11.0/lib/cocoapods/resolver.rb:385:in `find_cached_set'
+[capacitor]         /Library/Ruby/Gems/2.6.0/gems/cocoapods-1.11.0/lib/cocoapods/resolver.rb:360:in `specifications_for_dependency'
+[capacitor]         /Library/Ruby/Gems/2.6.0/gems/cocoapods-1.11.0/lib/cocoapods/resolver.rb:165:in `search_for'
+[capacitor]         /Library/Ruby/Gems/2.6.0/gems/cocoapods-1.11.0/lib/cocoapods/resolver.rb:274:in `block in sort_dependencies'
+[capacitor]         /Library/Ruby/Gems/2.6.0/gems/cocoapods-1.11.0/lib/cocoapods/resolver.rb:267:in `each'
+[capacitor]         /Library/Ruby/Gems/2.6.0/gems/cocoapods-1.11.0/lib/cocoapods/resolver.rb:267:in `sort_by'
+[capacitor]         /Library/Ruby/Gems/2.6.0/gems/cocoapods-1.11.0/lib/cocoapods/resolver.rb:267:in `sort_by!'
+[capacitor]         /Library/Ruby/Gems/2.6.0/gems/cocoapods-1.11.0/lib/cocoapods/resolver.rb:267:in `sort_dependencies'
+[capacitor]         /Library/Ruby/Gems/2.6.0/gems/molinillo-0.8.0/lib/molinillo/delegates/specification_provider.rb:60:in `block in sort_dependencies'
+[capacitor]         /Library/Ruby/Gems/2.6.0/gems/molinillo-0.8.0/lib/molinillo/delegates/specification_provider.rb:77:in `with_no_such_dependency_error_handling'
+[capacitor]         /Library/Ruby/Gems/2.6.0/gems/molinillo-0.8.0/lib/molinillo/delegates/specification_provider.rb:59:in `sort_dependencies'
+[capacitor]         /Library/Ruby/Gems/2.6.0/gems/molinillo-0.8.0/lib/molinillo/resolution.rb:754:in `push_state_for_requirements'
+[capacitor]         /Library/Ruby/Gems/2.6.0/gems/molinillo-0.8.0/lib/molinillo/resolution.rb:744:in `require_nested_dependencies_for'
+[capacitor]         /Library/Ruby/Gems/2.6.0/gems/molinillo-0.8.0/lib/molinillo/resolution.rb:727:in `activate_new_spec'
+[capacitor]         /Library/Ruby/Gems/2.6.0/gems/molinillo-0.8.0/lib/molinillo/resolution.rb:684:in `attempt_to_activate'
+[capacitor]         /Library/Ruby/Gems/2.6.0/gems/molinillo-0.8.0/lib/molinillo/resolution.rb:254:in `process_topmost_state'
+[capacitor]         /Library/Ruby/Gems/2.6.0/gems/molinillo-0.8.0/lib/molinillo/resolution.rb:182:in `resolve'
+[capacitor]         /Library/Ruby/Gems/2.6.0/gems/molinillo-0.8.0/lib/molinillo/resolver.rb:43:in `resolve'
+[capacitor]         /Library/Ruby/Gems/2.6.0/gems/cocoapods-1.11.0/lib/cocoapods/resolver.rb:94:in `resolve'
+[capacitor]         /Library/Ruby/Gems/2.6.0/gems/cocoapods-1.11.0/lib/cocoapods/installer/analyzer.rb:1078:in `block in resolve_dependencies'
+[capacitor]         /Library/Ruby/Gems/2.6.0/gems/cocoapods-1.11.0/lib/cocoapods/user_interface.rb:64:in `section'
+[capacitor]         /Library/Ruby/Gems/2.6.0/gems/cocoapods-1.11.0/lib/cocoapods/installer/analyzer.rb:1076:in `resolve_dependencies'
+[capacitor]         /Library/Ruby/Gems/2.6.0/gems/cocoapods-1.11.0/lib/cocoapods/installer/analyzer.rb:124:in `analyze'
+[capacitor]         /Library/Ruby/Gems/2.6.0/gems/cocoapods-1.11.0/lib/cocoapods/installer.rb:416:in `analyze'
+[capacitor]         /Library/Ruby/Gems/2.6.0/gems/cocoapods-1.11.0/lib/cocoapods/installer.rb:241:in `block in resolve_dependencies'
+[capacitor]         /Library/Ruby/Gems/2.6.0/gems/cocoapods-1.11.0/lib/cocoapods/user_interface.rb:64:in `section'
+[capacitor]         /Library/Ruby/Gems/2.6.0/gems/cocoapods-1.11.0/lib/cocoapods/installer.rb:240:in `resolve_dependencies'
+[capacitor]         /Library/Ruby/Gems/2.6.0/gems/cocoapods-1.11.0/lib/cocoapods/installer.rb:161:in `install!'
+[capacitor]         /Library/Ruby/Gems/2.6.0/gems/cocoapods-1.11.0/lib/cocoapods/command/install.rb:52:in `run'
+[capacitor]         /Library/Ruby/Gems/2.6.0/gems/claide-1.0.3/lib/claide/command.rb:334:in `run'
+[capacitor]         /Library/Ruby/Gems/2.6.0/gems/cocoapods-1.11.0/lib/cocoapods/command.rb:52:in `run'
+[capacitor]         /Library/Ruby/Gems/2.6.0/gems/cocoapods-1.11.0/bin/pod:55:in `<top (required)>'
+[capacitor]         /usr/local/bin/pod:23:in `load'
+[capacitor]         /usr/local/bin/pod:23:in `<main>'
+[capacitor]         ```
+[capacitor]         
+[capacitor]         ――― TEMPLATE END ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+[capacitor]         
+[capacitor]         [!] Oh no, an error occurred.
+[capacitor]         
+[capacitor]         Search for existing GitHub issues similar to yours:
+[capacitor]         https://github.com/CocoaPods/CocoaPods/search?q=dlopen%28%2FLibrary%2FRuby%2FGems%2F2.6.0%2Fgems%2Fffi-1.15.4%2Flib%2Fffi_c.bundle%2C+0x0009%29%3A+tried%3A+%27%2FLibrary%2FRuby%2FGems%2F2.6.0%2Fgems%2Fffi-1.15.4%2Flib%2Fffi_c.bundle%27+%28mach-o+file%2C+but+is+an+incompatible+architecture+%28have+%27x86_64%27%2C+need+%27arm64%27%29%29%2C+%27%2FSystem%2FVolumes%2FPreboot%2FCryptexes%2FOS%2FLibrary%2FRuby%2FGems%2F2.6.0%2Fgems%2Fffi-1.15.4%2Flib%2Fffi_c.bundle%27+%28no+such+file%29%2C+%27%2FLibrary%2FRuby%2FGems%2F2.6.0%2Fgems%2Fffi-1.15.4%2Flib%2Fffi_c.bundle%27+%28mach-o+file%2C+but+is+an+incompatible+architecture+%28have+%27x86_64%27%2C+need+%27arm64%27%29%29+-+%2FLibrary%2FRuby%2FGems%2F2.6.0%2Fgems%2Fffi-1.15.4%2Flib%2Fffi_c.bundle&type=Issues
+[capacitor]         
+[capacitor]         If none exists, create a ticket, with the template displayed above, on:
+[capacitor]         https://github.com/CocoaPods/CocoaPods/issues/new
+[capacitor]         
+[capacitor]         Be sure to first read the contributing guide for details on how to properly submit a ticket:
+[capacitor]         https://github.com/CocoaPods/CocoaPods/blob/master/CONTRIBUTING.md
+[capacitor]         
+[capacitor]         Don't forget to anonymize any private data!
+[capacitor]         
+[capacitor]         Searching for inspections failed: undefined method `map' for nil:NilClass
+[capacitor]         Looking for related issues on cocoapods/cocoapods...
+[capacitor]         
+[ERROR] An error occurred while running subprocess capacitor.
+        
+        capacitor add ios exited with exit code 1.
+        
+        Re-running this command with the --verbose flag may provide more information.
+```
+
+`sudo gem pristine ffi --version 1.15.4`
+
+```
+Password:
+Ignoring ffi-1.15.4 because its extensions are not built. Try: gem pristine ffi --version 1.15.4
+Restoring gems to pristine condition...
+Building native extensions. This could take a while...
+Restored ffi-1.15.4
+george@jojinoMac-mini auth-guard-test+[create-auth-guard] % ionic cap sync ios                     
+> react-scripts build
+Creating an optimized production build...
+Compiled with warnings.
+
+[eslint] 
+src/pages/Login.tsx
+  Line 7:11:  'history' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+File sizes after gzip:
+
+  188.01 kB  build/static/js/main.ffe9d154.js
+  27.48 kB   build/static/js/851.1927edae.chunk.js
+  5.26 kB    build/static/css/main.45fd5849.css
+  2.76 kB    build/static/js/372.e60fd2f7.chunk.js
+  2.46 kB    build/static/js/965.d872aa31.chunk.js
+  2.36 kB    build/static/js/186.ef9dea0c.chunk.js
+  2.2 kB     build/static/js/738.260e5638.chunk.js
+  1.44 kB    build/static/js/377.2be928ba.chunk.js
+  986 B      build/static/js/272.1a9e22a2.chunk.js
+  625 B      build/static/js/856.e3c5d196.chunk.js
+  518 B      build/static/js/22.bd24daaf.chunk.js
+  496 B      build/static/js/841.dec868a4.chunk.js
+
+The project was built assuming it is hosted at /.
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+You may serve it with a static server:
+
+  serve -s build
+
+Find out more about deployment here:
+
+  https://cra.link/deployment
+
+> capacitor sync ios
+[capacitor] ✔ Copying web assets from build to ios/App/App/public in 15.42ms
+[capacitor] ✔ Creating capacitor.config.json in ios/App/App in 602.88μs
+[capacitor] ✔ copy ios in 27.42ms
+[capacitor] ✔ Updating iOS plugins in 2.54ms
+[capacitor] [info] Found 5 Capacitor plugins for ios:
+[capacitor]        @capacitor-firebase/authentication@1.3.0
+[capacitor]        @capacitor/app@4.1.1
+[capacitor]        @capacitor/haptics@4.1.0
+[capacitor]        @capacitor/keyboard@4.1.1
+[capacitor]        @capacitor/status-bar@4.1.1
+[capacitor] ✖ Updating iOS native dependencies with pod install - failed!
+[capacitor] ✖ update ios - failed!
+[capacitor] [error] Analyzing dependencies
+[capacitor]         [!] CocoaPods could not find compatible versions for pod "GoogleUtilities/AppDelegateSwizzler":
+[capacitor]         In Podfile:
+[capacitor]         CapacitorFirebaseAuthentication (from `../../node_modules/@capacitor-firebase/authentication`) was resolved to 1.3.0, which depends on
+[capacitor]         Firebase/Auth (= 10.2.0) was resolved to 10.2.0, which depends on
+[capacitor]         FirebaseAuth (~> 10.2.0) was resolved to 10.2.0, which depends on
+[capacitor]         GoogleUtilities/AppDelegateSwizzler (~> 7.8)
+[capacitor]         
+[capacitor]         None of your spec sources contain a spec satisfying the dependency: `GoogleUtilities/AppDelegateSwizzler (~> 7.8)`.
+[capacitor]         
+[capacitor]         You have either:
+[capacitor]         * out-of-date source repos which you can update with `pod repo update` or with `pod install --repo-update`.
+[capacitor]         * mistyped the name or version.
+[capacitor]         * not added the source repo that hosts the Podspec to your Podfile.
+[capacitor]         
+[ERROR] An error occurred while running subprocess capacitor.
+        
+        capacitor sync ios exited with exit code 1.
+        
+        Re-running this command with the --verbose flag may provide more information.
+```
+
+#### podの更新
+
+`pod repo update`
+```
+Updating spec repo `trunk`
+```
+
+`cd ios`
+`pod repo update`
+
+```
+Updating spec repo `trunk`
+
+CocoaPods 1.11.3 is available.
+To update use: `sudo gem install cocoapods`
+
+For more information, see https://blog.cocoapods.org and the CHANGELOG for this version at https://github.com/CocoaPods/CocoaPods/releases/tag/1.11.3
+```
+
+`sudo gem install cocoapods`
+
+```
+Fetching cocoapods-core-1.11.3.gem
+Fetching cocoapods-1.11.3.gem
+Successfully installed cocoapods-core-1.11.3
+Successfully installed cocoapods-1.11.3
+Parsing documentation for cocoapods-core-1.11.3
+Installing ri documentation for cocoapods-core-1.11.3
+Parsing documentation for cocoapods-1.11.3
+Installing ri documentation for cocoapods-1.11.3
+Done installing documentation for cocoapods-core, cocoapods after 1 seconds
+2 gems installed
+```
+
+`ionic cap sync ios`
+
+```
+> react-scripts build
+Creating an optimized production build...
+Compiled with warnings.
+
+[eslint] 
+src/pages/Login.tsx
+  Line 7:11:  'history' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+File sizes after gzip:
+
+  188.01 kB  build/static/js/main.ffe9d154.js
+  27.48 kB   build/static/js/851.1927edae.chunk.js
+  5.26 kB    build/static/css/main.45fd5849.css
+  2.76 kB    build/static/js/372.e60fd2f7.chunk.js
+  2.46 kB    build/static/js/965.d872aa31.chunk.js
+  2.36 kB    build/static/js/186.ef9dea0c.chunk.js
+  2.2 kB     build/static/js/738.260e5638.chunk.js
+  1.44 kB    build/static/js/377.2be928ba.chunk.js
+  986 B      build/static/js/272.1a9e22a2.chunk.js
+  625 B      build/static/js/856.e3c5d196.chunk.js
+  518 B      build/static/js/22.bd24daaf.chunk.js
+  496 B      build/static/js/841.dec868a4.chunk.js
+
+The project was built assuming it is hosted at /.
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+You may serve it with a static server:
+
+  serve -s build
+
+Find out more about deployment here:
+
+  https://cra.link/deployment
+
+> capacitor sync ios
+[capacitor] ✔ Copying web assets from build to ios/App/App/public in 16.74ms
+[capacitor] ✔ Creating capacitor.config.json in ios/App/App in 475.38μs
+[capacitor] ✔ copy ios in 27.81ms
+[capacitor] ✔ Updating iOS plugins in 2.94ms
+[capacitor] [info] Found 5 Capacitor plugins for ios:
+[capacitor]        @capacitor-firebase/authentication@1.3.0
+[capacitor]        @capacitor/app@4.1.1
+[capacitor]        @capacitor/haptics@4.1.0
+[capacitor]        @capacitor/keyboard@4.1.1
+[capacitor]        @capacitor/status-bar@4.1.1
+[capacitor] ✔ Updating iOS native dependencies with pod install in 29.79s
+[capacitor] ✔ update ios in 29.81s
+[capacitor] [info] Sync finished in 29.843s
